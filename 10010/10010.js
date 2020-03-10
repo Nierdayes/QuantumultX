@@ -31,7 +31,7 @@ function gettel() {
 
 function loginapp(cb) {
   const url = { url: tokenurlVal, headers: JSON.parse(tokenheaderVal) }
-  chavy.get(url, (error, response, data) => {
+  chavy.post(url, (error, response, data) => {
     const respcookie = response.headers['Set-Cookie']
     const signheaderObj = JSON.parse(signheaderVal)
     let signcookie = signheaderObj['Cookie']
